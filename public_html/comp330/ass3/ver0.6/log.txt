@@ -1,0 +1,121 @@
+Thursday May 17th
+	15:00-16:00
+	- Adapting blobbyman code to a simple scene
+	without animation.
+
+	16:00-17:00
+	- Implementing lighting and perspective effects
+
+	17:00-18:00
+	- Downloading and examining RGBpixmap code.
+	- RGBpixmap found to be crap.
+
+	18:00-19:00
+	- started typing RGBpixmap from book.
+	- debugging RGBpixmap and adding filler code
+
+	19:00-20:00
+	- integrating RGBpixmap with main code and testing
+	pixmap displaying.
+	- Textures over 256x256 don't appear to work
+	- Posted message on Programming board.
+
+	20:00-22:00
+	- Found that textures have to be of side length
+	2^n. Posted solution on Programming board.
+	- Adding surfaces and generating textures:
+	Now have floor,ceiling,4 walls, 3 spheres on
+	3 axes, and blobby man
+	
+	22:00-23:00
+	- Problem with texture mapping, where the 3d
+	objects are no longer rendered properly.
+	Not sure why this is happening, perhaps due to
+	running under Cygwin or Win2000
+	- Posted message on Programming board.
+
+Friday May 18th
+	11:00-15:00
+	- Trying in vain to get Mesa and glut working under
+	my installation of Redhat 7.0.9 beta.
+
+	15:00-16:00
+	- Reinstalling Redhat 7.0
+	- Downloaded latest 2.4.4 kernel and compiled
+
+	16:00-17:00
+	- Copied assignment over from Win2000 partition
+	and compiled.
+	- Same rendering issues found as under Cygwin
+
+	17:00-18:00
+	- Searched on google for glTexEnvf syntax, after
+	finding that removing that command fixes the
+	rendering problem.
+	- Found that to render 3d objects proprly, it
+	is necessary to disable 2d textures after they
+	are drawn.
+	- Posted solution on Programming board.
+
+	18:00-21:00
+	- Adding in a sofa with different coloured fabrics
+	to simulate realistic shadows - easier than gl shadows.
+
+Monday May 21st
+	19:00-20:00
+	- Adding in the ability to view the room from each
+	corner.
+
+	20:00-21:00
+	- Fixing some pretty major bugs in the code, due to
+	throwing the whole lot together haphazardly.
+
+	21:00-22:00
+	- After fixing code, the test spheres on the axes
+	started producing some strange visual artifacts,
+	mostly 'speckles' etc.
+	- Posted message to Programming forum, searched
+	the net for potential solutions.
+
+	22:00-23:00
+	- After much hair pulling and commenting out of
+	bits of code, I gave up and recompiled under
+	linux/Mesa. Guess what? It's fine.
+	Damn windows.
+
+	23:00-0:00
+	- ...except now compiling under linux, all of the
+	perspective effects are gone. Arrrggghghh!!!
+
+Tueday May 22nd
+	11:00-14:00
+	- Trying various things to fix strange problems,
+	nothing seems to work.
+	- Resolved to get assistance and scheduled a
+	meeting with Matt Roberts.
+
+	21:00-0:00
+	- More stuffing around trying to get it to work
+	unsuccessfully.
+
+Wednesday May 23rd
+	10:00-11:00
+	- Playing with some parameters but essentially
+	nothing is different - same lack of perspective
+	under Mesa.
+
+	19:00-20:00
+	- Changed some lighting effects based on
+	information given in lecture. Light sources
+	are now being placed properly and are working.
+	- Fixed some surfaces that were being drawn
+	back-to-front.
+
+	21:00-22:00
+	- Recompiled under cygwin and played with the
+	lighting effects.
+	- Discovered by accident that the glDepthTest
+	function is causing the 'speckled' effect on the
+	objects. GL_ALWAYS seems to be unaffected, but
+	this causes objects to be displayed in front of
+	each other.

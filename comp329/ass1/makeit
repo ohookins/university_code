@@ -1,0 +1,5 @@
+#!/bin/sh
+
+latex assignment1.tex
+dvips -o assignment1.ps assignment1.dvi
+ghostview assignment1.ps &

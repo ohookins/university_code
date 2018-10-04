@@ -1,0 +1,28 @@
+#include <stdlib.h>
+#include <list.h>
+
+
+class LineNode
+{
+public:
+    int NodeID;		// ID of the connected node
+    int Arrows;		// number of arrows on the line (ie *-directional)
+};
+
+class Node
+{
+public:
+    int ID;		// 1 to whatever. identifies the node individually
+    int Shape;		// number of sides, 1 - circle, 3 - tri, etc.
+    int Colour;		// black to yellow from 0 to 6.
+    char* Name;		// name of node
+    float X;		// position in world coords from 0 to 100
+    float Y;		// same for y
+    list<LineNode> Connect;	// list of connecting nodes, and line types.
+
+    Node() { ID = 0; Shape = 0; Colour = 0; Name = "null"; X = 0; Y = 0; }
+    // default constructor
+    Node(int id, int s, int c, char* n, float x, float y)
+    : ID(id), Shape(s), Colour(c), Name(n), X(x), Y(y) {}
+    // constructor with values
+};

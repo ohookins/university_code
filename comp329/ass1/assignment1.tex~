@@ -1,0 +1,172 @@
+
+\documentstyle[times, 12pt, epsf]{article}
+%\setlength{\topmargin}{-0.2in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.0in}
+\begin{document}
+\centerline{\huge\bf COMP 329/825 Knowledge Systems}
+\vspace{1in}
+\centerline{\LARGE\bf Assignment 1 --- Deductive Reasoning }
+\vspace{3in}
+\centerline{\LARGE Oliver Hookins}
+\vspace{5mm}
+\centerline{\Large SID: 30704553}
+\vspace{1in}
+\centerline{\today}
+
+\newpage
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item
+$[(A \rightarrow (\neg E \wedge \neg S)] \wedge [(E \rightarrow (\neg A \wedge \neg S)] \wedge [(S \rightarrow (\neg A \wedge \neg E)]$
+\item
+$\neg S \rightarrow [(A \wedge \neg E)\vee(E \wedge \neg A)]$
+\item
+$\forall x\ [(S(x) \wedge \neg P(x)) \rightarrow \neg A(x)]$
+\item
+$\exists x\ \exists y\ [(S(x) \wedge P(y,x) \wedge \neg C(y,x)) \rightarrow \neg A(x)]$
+\item
+$\forall x\ \exists y\ [(I(y,f(x)) \vee I(y,m(x))) \rightarrow A(y)]$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item
+Proof of
+$\emptyset\vdash (P\rightarrow\neg P)\rightarrow\neg P$
+
+\begin{tabbing}
+12345678\=12345678\=14444442345678999999999999990\=1246545755575\kill
+\underline{List} \> \underline{Line\#} \> \underline{Line} \> 
+\underline{Justification} \\
+$\{1\}$\> $1$ \> $P\rightarrow \neg P$\> Assumption \\
+$\{1\}$\> $2$ \> $\neg P$\> $1$,Repetition \\
+$\{1,2\}$\> $3$ \> $\neg P$\> $1, 2$, CP \\
+$\{1\}$\>$4$ \> $(P\rightarrow \neg P)\rightarrow P$\> $1, 2$, CP \\
+{} \> {} \> {} \> QED
+\end{tabbing}
+
+
+\item
+Your proof of
+$\emptyset\vdash ((\neg P\rightarrow R)\wedge (Q\rightarrow R))
+\rightarrow ((P\rightarrow Q)\rightarrow R)$
+goes here.
+Here is a sample resolution-based proof (from lecture notes)
+that can be used for formatting purpose.
+
+{\bf We need to show that}
+$\{(G\vee H)\rightarrow(\neg J\wedge\neg K),\ G\} \vdash\neg J$.\\
+
+$CNF[(G\vee H)\rightarrow(\neg J\wedge\neg K)]$\\
+$\equiv (\neg G\vee\neg J)\wedge(\neg H\vee\neg J)\wedge
+(\neg G\vee\neg K)\wedge(\neg H\vee\neg K)$
+
+\vspace{3mm}
+$CNF(\neg\neg J) \equiv J$
+
+\begin{tabbing}
+123456\=14444442345678999999999999990999999999\=1246545755575\kill
+1.\> $\neg G\vee\neg J$ \> [Premise]\\
+2. \> $\neg H\vee\neg J$ \> [Premise]\\
+3.\> $\neg G\vee\neg K$ \> [Premise]\\
+4. \> $\neg H\vee\neg K$\> [Premise]\\
+5. \> $G$ \> [Premise]\\
+%6.\> $\neg\neg J$ \> [$\neg$ Conclusion]\\
+6.\> $J$ \> [$\neg$ Conclusion]\\
+7. \> $\neg G$ \> [1, 6. Resolution]\\
+8. \> $\Box$ \> [5, 7. Resolution]
+
+\end{tabbing}
+
+
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item
+Your answer to 3(a) goes here.
+You might want to look at the following for formating purpose.
+\begin{tabbing}
+123456\=1444444999999992345678999999999999990999999999\=1246545755575\kill
+
+1 \> $\neg\exists x\forall y\forall z((P(y)\vee Q(z))\rightarrow(P(x)\vee Q(x)))$
+\> {} \\
+
+2 \> $\neg\exists x\forall y\forall z(\neg(P(y)\vee Q(z))\vee(P(x)\vee Q(x)))$
+\> [Eliminate $\rightarrow$]\\
+
+3 \> $\forall x\neg\forall y\forall z(\neg(P(y)\vee Q(z))\vee(P(x)\vee Q(x)))$
+\> [Move $\neg$ inwards]\\
+
+4 \> $\forall x\exists y\neg\forall z(\neg(P(y)\vee Q(z))\vee(P(x)\vee Q(x)))$
+\> [Move $\neg$ inwards]\\
+
+5 \> $\forall x\exists y\exists z\neg(\neg(P(y)\vee Q(z))\vee(P(x)\vee Q(x)))$
+\> [Move $\neg$ inwards]\\
+
+6 \> $\forall x\exists y\exists z(\neg\neg(P(y)\vee Q(z))\wedge\neg(P(x)\vee Q(x)))$
+\> [Move $\neg$ inwards]\\
+
+7 \> $\forall x\exists y\exists z((P(y)\vee Q(z))\wedge(\neg P(x)\wedge\neg Q(x)))$
+\> [Move $\neg$ inwards]\\
+
+
+7 \> $\forall x((P(f(x))\vee Q((g(x)))\wedge(\neg P(x)\wedge\neg Q(x)))$
+\> [Skolemise]\\
+
+8 \> $(P(f(x))\vee Q((g(x)))\wedge\neg P(x)\wedge\neg Q(x)$
+\> [Drop $\forall$]
+\end{tabbing}
+\item
+Your answer to 3(b) goes here.
+The following is provided for help with formating.
+\begin{tabbing}
+123456\=14444442345678999999999999990999999999\=1246545755575\kill
+
+1. \> CNF($\neg\exists x(P(x)\rightarrow\forall x P(x))$) \> {}\\
+
+2. \> $\forall x\neg(\neg P(x)\vee\forall x~P(x))$
+\> [Drive $\neg$ inwards]\\
+
+
+3. \> $\forall x(\neg\neg P(x)\wedge\neg\forall x~P(x))$
+\> [Drive $\neg$ inwards]\\
+
+4. \> $\forall x(P(x)\wedge\exists x~\neg P(x))$
+\> [Drive $\neg$ inwards]\\
+
+5. \> $\forall x(P(x)\wedge\exists z~\neg P(z))$
+\> [Standardise Variables]\\
+
+6. \> $\forall x(P(x)\wedge\neg P(f(x)))$
+\> [Skolemise]\\
+
+7. \> $P(x)\wedge\neg P(f(x))$
+\> [Drop $\forall$]
+\end{tabbing}
+\hrule
+\begin{tabbing}
+123456\=14444442345678999999999999990999999999\=1246545755575\kill
+1.\> $P(x)$\> [$neg$ Conclusion]\\
+
+2.\> $\neg P(f(y))$\> [$neg$ Conclusion]\\
+
+3.\> $P(f(y))$\> [1. $\{x/f(y)\}$]\\
+
+4.\> $\Box$\> [2, 3. Resolution]
+\end{tabbing}
+\end{enumerate}
+\item
+\begin{enumerate}
+\item
+Your answer to 4(a) goes here.
+\item
+Your answer to 4(b) goes here
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,73 @@
+Wednesday, March 28 11:30-12:00
+	- Reading textbook on canvas class
+	- Typing in Point2 and IntRect classes
+
+Friday, March 30 10:15-11:00
+	- Typing in Canvas.h declaration, starting nodemaster.cc
+	- Became utterly confused and worried, need to entirely
+	rethink approach, or rather, actually think through approach
+	for the first time.
+
+Sunday, April 1 20:00-23:30
+	- Totally re-planned entire project on paper
+	- Downloaded the Red Book, STL "list.h" documentation
+	- Read GNU make documentation
+	- Designed and wrote Node.cc
+	- Wrote new improved multi-platform makefile
+
+Monday, April 2 10:00-12:00
+	- Compiling is generating errors - GL/glut.h not found
+	- Posted message to message board
+	- Fiddled with settings in Cygwin and Pompeii till I realised there was
+	an $(INCLUDE) missing from one of the lines
+
+	14:00-20:00
+	- Fixed up remaining small compilation problems
+	- Read section in Red Book on menus and tried to understand it
+	- Got Submenus and submenu items working properly.
+	- Set up Shape and Colour picking for new items.
+	- Set up different action modes, and menus for them.
+
+	11:00-11:30
+	- Typed body of Canvas.cc, and fleshed it out.
+
+Tuesday, April 3 12:00-15:00
+	- Fixed small compiling and syntax errors in Point2, RealRect,
+	IntRect, Canvas
+	- Integrated Canvas & helper classes into Nodemaster.
+
+	22:00-11:30
+	- Implemented filledTri, filledSqr, filledCir
+	- Made some rudimentary code to take care of user resizing the window
+	- Noticed that display of menus require redrawing of screen contents.
+
+Wednesday, April 4 11:30-12:00
+	- Recompiled on Pompeii (all previous work on Cygwin)
+	& realised that the menu damage to the screen does not occur under X
+	... very strange...
+	- Drawing nodes to screen & placing in list is all fine.
+	- Started on a redraw function.
+
+	3:30-4:00
+	- Puzzling over how to maintain node sizes. Ended up keeping track
+	of aspect and window to viewport ratios, and multiplying the
+	appropriate numbers. Not quite successful.
+
+	5:30-7:00
+	- Decided to reset the window and viewport values to the new
+	physical window sizes to fix node size changing. It worked!
+	- Not sure how to read node data once in the list. Searched for
+	some easy to read docs on bi-directional iterators.
+	- Figured out how to create and use the iterator, making use of
+	webpages and the discussion groups to find out.
+	- Implemented the redraw function.
+
+	9:00-12:00
+	- Realised that method for solving shrinking/expanding nodes etc
+	is completely by accident, and in fixing it, completely break the
+	operation of that function.
+	- Fix the resizing issue, but in doing so, make the entire drawing
+	now relative to the origin, located at bottom left.
+	- Fixed redraw function, respawning old nodes - huge memory leak.
+	- Fixed colour and shape not updating after redraw.
+	- Tried to figure out a method for drawing arrowed lines, but failed.

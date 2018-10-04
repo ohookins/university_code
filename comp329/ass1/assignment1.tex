@@ -1,0 +1,68 @@
+
+\documentstyle[times, 12pt, epsf]{article}
+%\setlength{\topmargin}{-0.2in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.0in}
+\begin{document}
+\centerline{\huge\bf COMP 329/825 Knowledge Systems}
+\vspace{1in}
+\centerline{\LARGE\bf Assignment 1 --- Deductive Reasoning }
+\vspace{3in}
+\centerline{\LARGE Oliver Hookins}
+\vspace{5mm}
+\centerline{\Large SID: 30704553}
+\vspace{1in}
+\centerline{\today}
+
+\newpage
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item
+$[(A \rightarrow (\neg E \wedge \neg S)] \wedge [(E \rightarrow (\neg A \wedge \neg S)] \wedge [(S \rightarrow (\neg A \wedge \neg E)]$
+\item
+$\neg S \rightarrow [(A \wedge \neg E)\vee(E \wedge \neg A)]$
+\item
+$\forall x\ [(S(x) \wedge \neg P(x)) \rightarrow \neg A(x)]$
+\item
+$\exists x\ \exists y\ [(S(x) \wedge P(y,x) \wedge \neg C(y,x)) \rightarrow \neg A(x)]$
+\item
+$\forall x\ \exists y\ [(I(y,f(x)) \vee I(y,m(x))) \rightarrow A(y)]$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item
+Proof of
+$\emptyset\vdash (P\rightarrow\neg P)\rightarrow\neg P$
+
+\begin{tabbing}
+12345678\=12345678\=14444442345678999999999999990\=1246545755575\kill
+\underline{List} \> \underline{Line\#} \> \underline{Line} \> 
+\underline{Justification} \\
+$\{1\}$\> $1$ \> $P\rightarrow \neg P$\> Assumption \\
+$\{1\}$\> $2$ \> $\neg P$\> $1$,Repetition \\
+$\{1,2\}$\> $3$ \> $\neg P$\> $1, 2$, CP \\
+$\{1\}$\>$4$ \> $(P\rightarrow \neg P)\rightarrow P$\> $1, 2$, CP \\
+{} \> {} \> {} \> QED
+\end{tabbing}
+
+
+\item
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item
+\item
+\end{enumerate}
+\item
+\begin{enumerate}
+\item
+\item
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

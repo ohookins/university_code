@@ -1,0 +1,3 @@
+woman(ann).
+mother(june).
+woman(X) :- mother(X).
